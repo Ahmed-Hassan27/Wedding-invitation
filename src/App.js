@@ -1,6 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Heart, Music, VolumeX} from 'lucide-react';
+const fontLink = document.createElement('link');
+fontLink.href = "https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap";
+fontLink.rel = "stylesheet";
+document.head.appendChild(fontLink);
 
 // --- 1. مكون بتلات الورد المتساقطة (🌸 Petals) ---
 const FloatingPetals = () => {
@@ -70,7 +74,7 @@ const CountdownTimer = ({ isArabic }) => {
 
 export default function WeddingInvitation() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isArabic, setIsArabic] = useState(true);
+  const [isArabic, setIsArabic] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const audioRef = useRef(null);
   
@@ -152,14 +156,19 @@ export default function WeddingInvitation() {
             {isArabic ? "فرحة محمود وسلمى" : "The Wedding of"}
           </p>
           
-          <h2 className="text-6xl font-light mb-4 text-[#5A4B41]">{isArabic ? "محمود" : "Mahmoud"}</h2>
+          {/* <h2 className="text-6xl font-light mb-4 text-[#5A4B41]">{isArabic ? "محمود" : "Mahmoud"}</h2> */}
+          <h2 className="text-7xl mb-4 text-[#5A4B41]" style={{ fontFamily: "'Great Vibes', cursive" }}>
+  {isArabic ? "محمود" : "Mahmoud"}
+          </h2>
           <div className="flex items-center justify-center gap-4 my-6">
             <div className="h-[1px] w-12 bg-[#D4AF37]/40" />
             <Heart size={18} className="text-[#D4AF37]" fill="#D4AF37" />
             <div className="h-[1px] w-12 bg-[#D4AF37]/40" />
           </div>
-          <h2 className="text-6xl font-light text-[#5A4B41]">{isArabic ? "سلمى" : "Salma"}</h2>
-
+          {/* <h2 className="text-6xl font-light text-[#5A4B41]">{isArabic ? "سلمى" : "Salma"}</h2> */}
+          <h2 className="text-7xl text-[#5A4B41]" style={{ fontFamily: "'Great Vibes', cursive" }}>
+            {isArabic ? "سلمى" : "Salma"}
+          </h2>
           <div className="mt-16 space-y-6 text-base text-gray-600 leading-loose">
             <p className="italic font-serif">
               {isArabic 
@@ -185,7 +194,7 @@ export default function WeddingInvitation() {
 
           <div className="mt-32 p-8 border border-[#D4AF37]/20 rounded-t-full">
             <MapPin size={24} className="mx-auto mb-4 text-[#D4AF37]" strokeWidth={1} />
-            <h3 className="text-xl font-bold mb-1">{isArabic ? "قاعة الفتح - المشير" : "Al-Fath Hall"}</h3>
+            <h3 className="text-xl font-bold mb-1">{isArabic ? "قاعة الروضة - المشير" : "Al-Rawda Hall - El Mosheer"}</h3>
             <p className="text-xs text-gray-400 mb-8 italic">{isArabic ? "التجمع الخامس، القاهرة" : "New Cairo, Egypt"}</p>
             <a
                 href="https://maps.app.goo.gl/Cfzd3MiFqsrCkbnZ8?g_st=aw" 
