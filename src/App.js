@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MapPin, Heart, Music, VolumeX, ChevronDown } from 'lucide-react';
+import { MapPin, Heart, Music, VolumeX} from 'lucide-react';
 
 // --- 1. مكون بتلات الورد المتساقطة (🌸 Petals) ---
 const FloatingPetals = () => {
